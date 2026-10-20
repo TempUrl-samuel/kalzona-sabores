@@ -1,19 +1,77 @@
 /*Fontes*/
-
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kavoon&display=swap');
+/* .kavoon-regular {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kavoon&family=Londrina+Solid:wght@100;300;400;900&display=swap');
+/* .londrina-solid-regular {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
 /*Fontes*/
 /*Para o SITE INTEIRO*/
 * {
     box-sizing: border-box;
 }
 
-#head-info{
-    background-color: rgba(rgb(255, 187, 85));
-    height: 2%;
+h1 {
+  font-family: "Kavoon", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 40px;
 }
 
+p{
+  font-family: "Kavoon", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px; 
+}
+
+h2{
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+}
+
+section{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 /*Para o SITE INTEIRO*/
-/*HOOK*//*HOOK*/
-/*SOBRE*//*SOBRE*/
-/*SABORES e ALTERNATIVAS*//*SABORES e ALTERNATIVAS*/
-/*FOOTER*//*FOOTER*/
-/*SOBREMESAS*//*SOBREMESAS*/
+/*HOOK*/
+#hook{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+#hook-torto>h1{
+    transform: rotate(-10deg);
+}
+/*HOOK*/
+/*SOBRE*/
+
+/* #sobre-estabelecimento{
+    background-color: rgb(179, 220, 255);
+    padding: 1%;
+} */
+
+#sobre-estabelecimento>h2{
+    text-align: center;
+}
+/*SOBRE*/
+/*SABORES e ALTERNATIVAS*/
+#titulo-sabores{
+    transform: rotate(5deg);
+
+}
+/*SABORES e ALTERNATIVAS*/
+/*FOOTER*/
+/*FOOTER*/
+/*SOBREMESAS*/
+/*SOBREMESAS*/

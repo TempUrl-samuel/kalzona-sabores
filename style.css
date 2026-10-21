@@ -19,9 +19,9 @@
   --btn-bg: hsl(226, 69%, 23%);
   --texto-dark: white;
   --texto-normal: black;
-  --background-light: rgb(221, 146, 96);
+  --background-light: rgb(255, 188, 143);
   --background-dark: rgb(19, 27, 94);
-  --stand-out: rgba(121, 85, 205, 0.436);
+  --stand-out: rgba(178, 250, 110, 0.555);
   --stand-out-dark: rgb(134, 16, 46);
 }
 
@@ -86,7 +86,7 @@
   }
 
   .dark-mode .head-info {
-    background-color: var(--background-dark);
+    background-color: var(--stand-out-dark);
 
   }
 
@@ -104,6 +104,7 @@
 /*Para o SITE INTEIRO*/
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -134,12 +135,31 @@ h2 {
 section {
   margin-top: 5%;
   margin-bottom: 5%;
+  background-color: var(--stand-out);
 }
 
 /*HEADER*/
 
 #head-info {
-  background-color: var(--background-light);
+  background-color: var(--stand-out);
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#head-info>div,ul{
+  align-items: center;
+}
+
+#head-info>ul,
+li {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: var(--texto-normal);
+  margin-left: 1%;
+  width: 80%;
 }
 
 /*HEADER*/

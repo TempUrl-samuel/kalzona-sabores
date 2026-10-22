@@ -19,9 +19,9 @@
   --btn-bg: hsl(226, 69%, 23%);
   --texto-dark: white;
   --texto-normal: black;
-  --background-light: rgb(255, 188, 143);
+  --background-light: white;
   --background-dark: rgb(19, 27, 94);
-  --stand-out: rgba(178, 250, 110, 0.555);
+  --stand-out: rgb(255, 153, 85);
   --stand-out-dark: rgb(134, 16, 46);
 }
 
@@ -148,7 +148,8 @@ section {
   margin: 0 auto;
 }
 
-#head-info>div,ul{
+#head-info>div,
+ul {
   align-items: center;
 }
 
@@ -161,7 +162,6 @@ li {
   margin-left: 1%;
   width: 80%;
 }
-
 /*HEADER*/
 /*Para o SITE INTEIRO*/
 /*HOOK*/
@@ -170,30 +170,40 @@ li {
   flex-direction: row;
   justify-content: space-evenly;
 }
-
-#hook-torto>h1 {
-  transform: rotate(-10deg);
-}
-
 /*HOOK*/
 /*SOBRE*/
-
-/* #sobre-estabelecimento{
+#sobre-estabelecimento{
     background-color: rgb(179, 220, 255);
     padding: 1%;
-} */
+}
 
 #sobre-estabelecimento>h2 {
   text-align: center;
 }
-
 /*SOBRE*/
 /*SABORES e ALTERNATIVAS*/
-#titulo-sabores {
-  transform: rotate(5deg);
-
+#titulo-sabores{
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
+
+#sabores-calzone{
+  display: grid;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+}
+
+#sabores-calzone>h3{
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
 /*SABORES e ALTERNATIVAS*/
 /*FOOTER*/
 /*FOOTER*/

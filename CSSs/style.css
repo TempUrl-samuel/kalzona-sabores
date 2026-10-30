@@ -22,7 +22,7 @@
   --background-light: rgb(148, 224, 224);
   --background-dark: rgb(58, 19, 94);
   --stand-out: rgb(248, 158, 55);
-  --stand-out-dark: rgb(16, 18, 134);
+  --stand-out-dark: rgb(16, 67, 134);
 }
 
 /*botao em si*/
@@ -154,9 +154,9 @@ section {
   border-radius: 0px 0px 50px 50px;
 }
 
-#head-info {
+#head-info a{
   text-decoration: none;
-  color: var(--background-light);
+  color: var(--texto-normal);
 }
 
 #head-info>div,

@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalzona</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSSs/style.css">
+    <link rel="stylesheet" href="CSSs/inicio.css">
+    <link rel="stylesheet" href="CSSs/paginas.css">
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="pagina-inicial">
     <header id="head-info">
-        <div id="header-logo">
+        <a id="header-logo" href="index.html">
             <h1>Kalzona</h1>
-        </div>
+        </a>
         <ul id="lista-header">
-            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema"> </button>
-            <li><a href="Sobre.html">Sobre Nós</a></li>
-            <li><a href="Menu.html">Cardápio</a></li>
-            <li><a href="Local.html">Localizações</a></li>
-            <li><a href="Login.html">Log In</a></li>
-            <li><a href="Contact.html">Contato</a></li>
+            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button"
+                    aria-label="Alternar modo claro e escuro"> </button></li>
+            <li><a href="2sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
+            <li><a href="3localizacoes.html">Localizações</a></li>
+            <li><a href="4login.html">Log In</a></li>
+            <li><a href="5contato.html">Contato</a></li>
+            <li><a href="7carrinho.html">Carrinho</a></li>
         </ul>
     </header>
     <main>
@@ -33,23 +37,28 @@
                 </h1>
             </div>
             <div>
-                <img src="IMAGENS/Imagem_não_disponível.svg">
+                <img src="IMAGENS/Imagem_não_disponível.svg" alt="Espaço reservado para a imagem da Kalzona">
             </div>
         </section>
-        <section id="sobre-estabelecimento">
-            <h2>
-                Nós somos um estabelecimento focado em calzones com o intuito de...
-                <br>
-                Temos um foco grande em calzones mas tambem produzimos...
-            </h2>
+        <div class="abertura"><span class="etiqueta">KALZONA • SOBRE NÓS</span>
+            <h1>Prazer, somos a Kalzona.</h1>
+            <p>Calzones para todo tipo de apetite.</p>
+        </div>
+
+        <section class="painel">
+            <h2>Nosso foco é o calzone.</h2>
+            <p>A Kalzona é um projeto de delivery com sabores salgados, vegetarianos e doces. Nossa proposta é reunir
+                essas opções em um cardápio fácil de escolher e pedir.</p>
+            <p>Além dos calzones, o cardápio tem espaço para esfihas, breadsticks e outras alternativas da casa.</p><a
+                class="botao" href="#sabores-e-alternativas">Conhecer o cardápio</a>
         </section>
         <section id="sabores-e-alternativas">
             <h1>Apenas uma fração dos sabores que possuímos:</h1>
             <div id="inicio-sabores">
                 <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <legend></legend>
+
             </div>
-            <div id="sabores-calzone">
+            <div class="sabores-calzone">
                 <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
                 <h3>calabresa</h3>
                 <h3>frango com catupiry</h3>
@@ -58,7 +67,7 @@
                 <h3>vegetariana</h3>
             </div>
             <h1>MAS SE NÃO QUISER, TAMBÉM TEMOS OUTRAS OPÇÕES</h1>
-            <div id="sabores-calzone">
+            <div class="sabores-calzone">
                 <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
                 <h3>opcao vegetariana</h3>
                 <h3>esfihas</h3>
@@ -68,21 +77,28 @@
                 <h3>stromboli</h3>
                 <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
             </div>
-            <div id="sabores-calzone">
-            <h1>VAI UM DOCE AÍ?</h1>
-            <br>
-            <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-            <h3>calzone de nutella com morango</h3>
-            <h3>calzone de doce de leite e banana</h3>
-            <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-            <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-            <h3>molho de chocolate para breadsticks</h3>
-            <h3>esfihas doces</h3>
-            <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
+            <div class="sabores-calzone">
+                <h1>VAI UM DOCE AÍ?</h1>
+                <br>
+                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
+                <h3>calzone de nutella com morango</h3>
+                <h3>calzone de doce de leite e banana</h3>
+                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
+                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
+                <h3>molho de chocolate para breadsticks</h3>
+                <h3>esfihas doces</h3>
+                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer class="acessos-paginas">
+        <a href="index.html">Início</a> |
+        <a href="6cadastro.html">Cadastro</a> |
+        <a href="perfil.html">Perfil</a> |
+        <a href="pedidos.html">Pedidos</a> |
+        <a href="7carrinho.html">Carrinho</a> |
+        <a href="8pagamento.html">Pagamento</a>
+    </footer>
 </body>
 
 </html>

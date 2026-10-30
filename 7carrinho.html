@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrinho | Kalzona</title>
-<link rel="stylesheet" href="CSSs/style.css">
-<link rel="stylesheet" href="paginas.css">
-<script src="script.js" defer></script>
-</head>
-<body class="pagina-interna">
-<header id="head-info">
-    <a id="header-logo" href="index.html">
-        <h1>Kalzona</h1>
-    </a>
-    <ul id="lista-header">
-        <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button"
-                aria-label="Alternar modo claro e escuro"> </button></li>
-        <li><a href="2sobre-nos.html">Sobre Nós</a></li>
-        <li><a href="#sabores-e-alternativas">Cardápio</a></li>
-        <li><a href="3localizacoes.html">Localizações</a></li>
-        <li><a href="4login.html">Log In</a></li>
-        <li><a href="5contato.html">Contato</a></li>
-        <li><a href="6cadastro.html">Cadastro</a></li>
-        <li><a href="7carrinho.html">Carrinho</a></li>
-    </ul>
-</header>
-<main>
-<div class="abertura"><span class="etiqueta">KALZONA • CARRINHO</span><h1>O que vai matar sua fome hoje?</h1><p>Confira seus sabores antes de seguir para o pagamento.</p></div>
 
-<div class="duas-colunas"><section class="painel vazio"><h2>Seu carrinho está vazio.</h2><p>Calabresa, frango com catupiry ou um doce para fechar? Comece pelo cardápio.</p><a class="botao" href="index.html#sabores-e-alternativas">Ver sabores</a></section><aside class="painel azul"><h2>Resumo do pedido</h2><dl><div><dt>Itens</dt><dd>0</dd></div><div><dt>Subtotal</dt><dd>R$ 0,00</dd></div><div><dt>Entrega</dt><dd>A calcular</dd></div></dl><p>Nenhum produto foi adicionado.</p><button type="button" disabled>Ir para pagamento</button><a class="link-apoio" href="pagamento.html">Ver prévia da página de pagamento</a></aside></div>
-</main>
-<footer class="acessos-paginas">
-    <a href="1index.html">Início</a> |
-    <a href="6cadastro.html">Cadastro</a> |
-    <a href="perfil.html">Perfil</a> |
-    <a href="pedidos.html">Pedidos</a> |
-    <a href="7carrinho.html">Carrinho</a> |
-    <a href="8pagamento.html">Pagamento</a>
-</footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho | Kalzona</title>
+    <link rel="stylesheet" href="CSSs/style.css">
+    <link rel="stylesheet" href="CSSs/paginas.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="pagina-interna">
+    <header id="head-info">
+        <a id="header-logo" href="index.html">
+            <h1>Kalzona</h1>
+        </a>
+        <ul id="lista-header">
+            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button"
+                    aria-label="Alternar modo claro e escuro"> </button></li>
+            <li><a href="2sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
+            <li><a href="3localizacoes.html">Localizações</a></li>
+            <li><a href="4login.html">Log In</a></li>
+            <li><a href="5contato.html">Contato</a></li>
+            <li><a href="6cadastro.html">Cadastro</a></li>
+            <li><a href="7carrinho.html">Carrinho</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="abertura"><span class="etiqueta">KALZONA • CARRINHO</span>
+            <h1>O que vai matar sua fome hoje?</h1>
+            <p>Confira seus sabores antes de seguir para o pagamento.</p>
+        </div>
+
+        <div class="duas-colunas">
+            <section class="painel vazio">
+                <h2>Seu carrinho está vazio.</h2>
+                <p>Calabresa, frango com catupiry ou um doce para fechar? Comece pelo cardápio.</p><a class="botao"
+                    href="index.html#sabores-e-alternativas">Ver sabores</a>
+            </section>
+            <aside class="painel azul">
+                <h2>Resumo do pedido</h2>
+                <dl>
+                    <div>
+                        <dt>Itens</dt>
+                        <dd>0</dd>
+                    </div>
+                    <div>
+                        <dt>Subtotal</dt>
+                        <dd>R$ 0,00</dd>
+                    </div>
+                    <div>
+                        <dt>Entrega</dt>
+                        <dd>A calcular</dd>
+                    </div>
+                </dl>
+                <p>Nenhum produto foi adicionado.</p>
+                <button type="button" disabled>Ir para pagamento</button>
+                <a class="link-apoio" href="pagamento.html">
+                    Ver prévia da página de pagamento
+                </a>
+            </aside>
+        </div>
+    </main>
+    <footer class="acessos-paginas">
+        <a href="index.html">Início</a> |
+        <a href="6cadastro.html">Cadastro</a> |
+        <a href="perfil.html">Perfil</a> |
+        <a href="pedidos.html">Pedidos</a> |
+        <a href="7carrinho.html">Carrinho</a> |
+        <a href="8pagamento.html">Pagamento</a>
+    </footer>
 </body>
+
 </html>

@@ -1,0 +1,390 @@
+/*PÁGINAS INTERNAS*/
+
+/*APRESENTAÇÃO*/
+
+.pagina-interna main {
+  margin-top: 5%;
+}
+
+.abertura {
+  background-color: var(--stand-out);
+  padding: 24px 10%;
+  margin-bottom: 5%;
+}
+
+.abertura h1 {
+  margin: 12px 0;
+}
+
+.etiqueta {
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 22px;
+}
+
+.abertura p {
+  margin-top: 16px;
+}
+
+/*CONTEÚDO*/
+
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4%;
+  padding: 0 10%;
+}
+
+.painel {
+  background-color: var(--stand-out);
+  padding: 24px;
+  margin: 0 0 5%;
+  min-width: 0;
+}
+
+main > .painel {
+  width: 80%;
+  margin: 0 auto 5%;
+}
+
+main > .estreito {
+  max-width: 720px;
+}
+
+.azul {
+  background-color: rgb(179, 220, 255);
+}
+
+.painel h2, .painel p {
+  margin-bottom: 20px;
+}
+
+.painel h2 {
+  font-weight: 400;
+}
+
+.painel p {
+  line-height: 1.5;
+}
+
+.aviso, .ajuda {
+  font-family: "Comic Neue", cursive;
+  font-size: 16px;
+}
+
+/*FORMULÁRIOS*/
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+  min-width: 0;
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 18px;
+}
+
+label, legend {
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 23px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  font-family: "Comic Neue", cursive;
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  border: 1px solid #555;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  border: 1px solid #555;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+legend {
+  padding: 0 8px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.opcao input {
+  width: 18px;
+  height: 18px;
+}
+
+.painel button, .botao {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: rgb(179, 220, 255);
+  color: black;
+}
+
+.painel button:disabled {
+  background-color: #ddd;
+  color: #555;
+  cursor: not-allowed;
+}
+
+form + p, .link-apoio {
+  display: block;
+  margin-top: 20px;
+}
+
+dl {
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.acessos-paginas {
+  text-align: center;
+  padding: 20px;
+}
+
+input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 3px solid #3974cc;
+  outline-offset: 3px;
+}
+
+/*BOTÃO DARK MODE*/
+
+.dark-mode .abertura, .dark-mode .painel {
+  background-color: var(--stand-out-dark);
+}
+
+.dark-mode .azul {
+  background-color: #243f68;
+}
+
+.dark-mode .painel a, .dark-mode .acessos-paginas a {
+  color: #d4e8ff;
+}
+
+.dark-mode input, .dark-mode select, .dark-mode textarea {
+  background-color: #192443;
+  color: white;
+  border-color: #b5bed3;
+}
+
+.dark-mode fieldset {
+  border-color: #b5bed3;
+}
+
+.dark-mode .painel .botao {
+  color: black;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 900px) {
+  .pagina-interna #head-info {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .pagina-interna #lista-header {
+    flex-wrap: wrap;
+    padding: 8px;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .pagina-interna #lista-header li {
+    width: auto;
+  }
+
+  .duas-colunas {
+    grid-template-columns: 1fr;
+    padding: 0 5%;
+  }
+
+  main > .painel {
+    width: 90%;
+  }
+
+  .abertura {
+    padding: 20px 5%;
+  }
+
+  .abertura h1 {
+    font-size: 32px;
+  }
+
+  .campos {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/*PADRÃO DA PÁGINA INICIAL*/
+
+.pagina-interna {
+  color: black;
+}
+
+.pagina-interna a {
+  color: inherit;
+}
+
+.pagina-interna main {
+  margin-top: 48px;
+}
+
+.pagina-interna .abertura {
+  padding: 32px 7%;
+  margin-bottom: 48px;
+}
+
+.pagina-interna .abertura h1 {
+  line-height: 1.25;
+}
+
+.pagina-interna .acessos-paginas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--stand-out);
+}
+
+.pagina-interna .acessos-paginas a {
+  font-family: "Comic Neue", cursive;
+  font-size: 18px;
+}
+
+.pagina-interna.dark-mode {
+  color: white;
+}
+
+.pagina-interna.dark-mode #head-info, .pagina-interna.dark-mode .acessos-paginas {
+  background-color: var(--stand-out-dark);
+}
+
+.pagina-interna.dark-mode #lista-header li {
+  color: white;
+}
+
+.pagina-interna.dark-mode .painel a, .pagina-interna.dark-mode .acessos-paginas a {
+  color: inherit;
+}
+
+.pagina-interna.dark-mode .painel .botao {
+  color: black;
+}
+
+@media (max-width: 760px) {
+  .pagina-interna #head-info {
+    width: 100%;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .pagina-interna #lista-header {
+    gap: 14px;
+  }
+
+  .pagina-interna main {
+    margin-top: 32px;
+  }
+
+  .pagina-interna .abertura {
+    padding: 24px 5%;
+    margin-bottom: 32px;
+  }
+
+  .pagina-interna h1 {
+    font-size: 30px;
+  }
+
+}
+
+.pagina-interna #head-info {
+  width: 90%;
+  max-width: 1400px;
+  padding: 16px 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.pagina-interna #lista-header {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.pagina-interna #lista-header li {
+  width: auto;
+  margin: 0;
+}
+
+.pagina-interna #lista-header a {
+  color: inherit;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.pagina-interna #btn-dark {
+  padding: 8px 14px;
+  font-size: 23px;
+  white-space: nowrap;
+}
+
+.pagina-interna #botao-tema {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.pagina-interna a:focus-visible, .pagina-interna button:focus-visible {
+  outline: 3px solid #3974cc;
+  outline-offset: 4px;
+}
+
+@media (max-width:760px) {
+  .pagina-interna #head-info {
+    width:100%;
+    padding:16px;
+    gap:16px;
+  }
+
+  .pagina-interna #lista-header {
+    gap:14px;
+  }
+
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu perfil | Kalzona</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="paginas.css">
+<!-- Reutiliza o script original da dupla sem modificá-lo. -->
+<script src="script.js" defer></script>
+</head>
+<body class="pagina-interna">
+<!-- Cabeçalho compartilhado pelas novas páginas. -->
+<header id="head-info">
+        <div id="header-logo">
+            <h1>Kalzona</h1>
+        </div>
+        <ul id="lista-header">
+            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button" aria-label="Alternar modo claro e escuro"> </button></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
+            <li><a href="localizacoes.html">Localizações</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+    </header>
+<main>
+<!-- Apresentação da página. -->
+<div class="abertura"><span class="etiqueta">KALZONA • MEU PERFIL</span><h1>Tudo pronto para a próxima entrega.</h1><p>Consulte seus dados e seu endereço.</p></div>
+<!-- Conteúdo estático: a integração será feita em outra etapa. -->
+<section class="painel"><h2>Meus dados</h2><p class="aviso">Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem salvos.</p><form><div class="campos"><div class="campo"><label for="nome">Nome completo</label><input id="nome" type="text" maxlength="80"></div><div class="campo"><label for="email">E-mail</label><input id="email" type="email" maxlength="120"></div><div class="campo"><label for="telefone">Celular com DDD</label><input id="telefone" type="tel" maxlength="11" inputmode="numeric"></div></div><fieldset><legend>Endereço de entrega</legend><div class="campos"><div class="campo"><label for="cep">CEP</label><input id="cep" type="text" inputmode="numeric" maxlength="8" placeholder="Somente números"></div><div class="campo"><label for="rua">Rua</label><input id="rua" type="text" ></div><div class="campo"><label for="numero">Número</label><input id="numero" type="text" inputmode="numeric" maxlength="6"></div><div class="campo"><label for="complemento">Complemento (opcional)</label><input id="complemento" type="text" ></div><div class="campo"><label for="cidade">Cidade</label><input id="cidade" type="text" ></div><div class="campo"><label for="estado">Estado</label><select id="estado"><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div></div></fieldset><button type="button" disabled>Salvar alterações</button></form></section>
+</main>
+<footer class="acessos-paginas"><a href="index.html">Início</a> | <a href="cadastro.html">Cadastro</a> | <a href="perfil.html">Perfil</a> | <a href="pedidos.html">Pedidos</a> | <a href="carrinho.html">Carrinho</a> | <a href="pagamento.html">Pagamento</a></footer>
+</body>
+</html>

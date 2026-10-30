@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato | Kalzona</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="paginas.css">
+<!-- Reutiliza o script original da dupla sem modificá-lo. -->
+<script src="script.js" defer></script>
+</head>
+<body class="pagina-interna">
+<!-- Cabeçalho compartilhado pelas novas páginas. -->
+<header id="head-info">
+        <div id="header-logo">
+            <h1>Kalzona</h1>
+        </div>
+        <ul id="lista-header">
+            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button" aria-label="Alternar modo claro e escuro"> </button></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
+            <li><a href="localizacoes.html">Localizações</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+    </header>
+<main>
+<!-- Apresentação da página. -->
+<div class="abertura"><span class="etiqueta">KALZONA • CONTATO</span><h1>Vamos conversar?</h1><p>Dúvidas sobre os calzones, ingredientes ou uma entrega? Deixe sua mensagem.</p></div>
+<!-- Conteúdo estático: a integração será feita em outra etapa. -->
+<div class="duas-colunas"><section class="painel"><h2>Fale com a Kalzona</h2><p class="aviso">Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem salvos.</p><form><div class="campo"><label for="nome">Seu nome</label><input id="nome" type="text" maxlength="80" autocomplete="name"></div><div class="campo"><label for="email">E-mail</label><input id="email" type="email" maxlength="120" autocomplete="email"></div><div class="campo"><label for="assunto">Assunto</label><select id="assunto"><option>Ingredientes e sabores</option><option>Meu pedido</option><option>Entrega</option><option>Sugestão</option></select></div><div class="campo"><label for="mensagem">Mensagem</label><textarea id="mensagem" rows="5" maxlength="1000" placeholder="Conte como podemos ajudar."></textarea></div><button type="button" disabled>Enviar mensagem</button></form></section><aside class="painel azul"><h2>Antes de pedir</h2><p>No cardápio você encontra calzones salgados, opções vegetarianas e doces.</p><p>Se tiver alguma restrição alimentar, confirme os ingredientes com a equipe antes de finalizar o pedido.</p><a class="botao secundario" href="index.html#sabores-e-alternativas">Conhecer os sabores</a></aside></div>
+</main>
+<footer class="acessos-paginas"><a href="index.html">Início</a> | <a href="cadastro.html">Cadastro</a> | <a href="perfil.html">Perfil</a> | <a href="pedidos.html">Pedidos</a> | <a href="carrinho.html">Carrinho</a> | <a href="pagamento.html">Pagamento</a></footer>
+</body>
+</html>

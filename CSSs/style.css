@@ -1,0 +1,225 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kavoon&display=swap');
+/* .kavoon-regular {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kavoon&family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+/* .londrina-solid-regular {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+/*Fontes*/
+/*Botão dark mode*/
+
+:root {
+  --btn-bg: hsl(226, 69%, 23%);
+  --texto-dark: white;
+  --texto-normal: black;
+  --background-light: rgb(148, 224, 224);
+  --background-dark: rgb(58, 19, 94);
+  --stand-out: rgb(248, 158, 55);
+  --stand-out-dark: rgb(16, 18, 134);
+}
+
+/*botao em si*/
+#btn-dark {
+  color: var(--texto-dark);
+  background-color: var(--btn-bg);
+  border-style: none;
+  padding: 1.5vh 2vh;
+  width: max-content;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 50px;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+}
+
+#botao-tema {
+  padding: 4vh;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 30%,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(8px) saturate(1.5);
+  -webkit-backdrop-filter: blur(8px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#botao-tema:hover {
+  transform: scale(1.15);
+}
+
+/*botao em si*/
+
+
+.dark-mode {
+  background: linear-gradient(180deg, rgba(128, 60, 115, 1), var(--background-dark));
+  background-attachment: fixed;
+  color: var(--texto-dark);
+
+
+  .dark-mode .hovering-bg {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark-mode .hovering-bg:hover {
+    background-color: var(--stand-out-dark);
+    transition: background-color 0.5s ease;
+  }
+
+  .dark-mode .head-info {
+    background-color: var(--stand-out-dark);
+
+  }
+
+  .dark-mode h1 {
+    background: linear-gradient(135deg,
+        rgba(147, 79, 94, 0.45),
+        rgba(147, 79, 94, 0.15));
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .head-info h1 {
+    color: var(--texto-dark);
+  }
+}
+
+/*Botão dark mode*/
+
+
+/*Para o SITE INTEIRO*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-light);
+}
+
+h1 {
+  font-family: "Kavoon", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 40px;
+}
+
+p {
+  font-family: "Kavoon", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+}
+
+section {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: var(--stand-out);
+  border-radius: 50px;
+}
+
+/*HEADER*/
+
+#head-info {
+  background-color: var(--stand-out);
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 0px 0px 50px 50px;
+}
+
+#head-info {
+  text-decoration: none;
+  color: var(--background-light);
+}
+
+#head-info>div,
+ul {
+  align-items: center;
+}
+
+#head-info>ul,
+li {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: var(--texto-normal);
+  margin-left: 1%;
+  width: 80%;
+}
+
+/*HEADER*/
+/*Para o SITE INTEIRO*/
+/*HOOK*/
+#hook {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/*HOOK*/
+/*SOBRE*/
+#sobre-estabelecimento {
+  background-color: rgb(179, 220, 255);
+  padding: 1%;
+}
+
+#sobre-estabelecimento>h2 {
+  text-align: center;
+}
+
+/*SOBRE*/
+/*SABORES e ALTERNATIVAS*/
+#sabores-e-alternativas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#sabores-calzone {
+  display: grid;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#sabores-calzone>h3 {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
+
+/*SABORES e ALTERNATIVAS*/
+/*FOOTER*/
+/*FOOTER*/
+/*SOBREMESAS*/
+/*SOBREMESAS*/

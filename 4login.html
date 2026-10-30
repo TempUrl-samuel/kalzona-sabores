@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Entrar | Kalzona</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="paginas.css">
-<!-- Reutiliza o script original da dupla sem modificá-lo. -->
-<script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Kalzona</title>
+    <link rel="stylesheet" href="CSSs/style.css">
+    <link rel="stylesheet" href="paginas.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body class="pagina-interna">
-<!-- Cabeçalho compartilhado pelas novas páginas. -->
-<header id="head-info">
-        <div id="header-logo">
+    <header id="head-info">
+        <a id="header-logo" href="1index.html">
             <h1>Kalzona</h1>
-        </div>
+        </a>
         <ul id="lista-header">
-            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button" aria-label="Alternar modo claro e escuro"> </button></li>
-            <li><a href="sobre-nos.html">Sobre Nós</a></li>
-            <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
-            <li><a href="localizacoes.html">Localizações</a></li>
-            <li><a href="login.html">Log In</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="carrinho.html">Carrinho</a></li>
+            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button"
+                    aria-label="Alternar modo claro e escuro"> </button></li>
+            <li><a href="2sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="#sabores-e-alternativas">Cardápio</a></li>
+            <li><a href="3localizacoes.html">Localizações</a></li>
+            <li><a href="4login.html">Log In</a></li>
+            <li><a href="5contato.html">Contato</a></li>
+            <li><a href="6cadastro.html">Cadastro</a></li>
+            <li><a href="7carrinho.html">Carrinho</a></li>
         </ul>
-    </header>
-<main>
-<!-- Apresentação da página. -->
-<div class="abertura"><span class="etiqueta">KALZONA • ENTRAR</span><h1>Seu próximo calzone começa aqui.</h1><p>Entre na sua conta para acompanhar os pedidos.</p></div>
-<!-- Conteúdo estático: a integração será feita em outra etapa. -->
-<section class="painel estreito"><h2>Entrar na Kalzona</h2><p class="aviso">Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem salvos.</p><form><div class="campo"><label for="email">E-mail</label><input id="email" type="email" autocomplete="email" maxlength="120"></div><div class="campo"><label for="senha">Senha</label><input id="senha" type="password" autocomplete="current-password" maxlength="64"></div><button type="button" disabled>Entrar</button></form><p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a>.</p></section>
-</main>
-<footer class="acessos-paginas"><a href="index.html">Início</a> | <a href="cadastro.html">Cadastro</a> | <a href="perfil.html">Perfil</a> | <a href="pedidos.html">Pedidos</a> | <a href="carrinho.html">Carrinho</a> | <a href="pagamento.html">Pagamento</a></footer>
+    </header>>
+    <main>
+        <div class="abertura"><span class="etiqueta">KALZONA • ENTRAR</span>
+            <h1>Seu próximo calzone começa aqui.</h1>
+            <p>Entre na sua conta para acompanhar os pedidos.</p>
+        </div>
+        <section class="painel estreito">
+            <h2>Entrar na Kalzona</h2>
+            <p class="aviso">
+                Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem salvos.
+            </p>
+            <form>
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" autocomplete="email" maxlength="120">
+                    </div>
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" autocomplete="current-password" maxlength="64">
+                </div><button type="button" disabled>Entrar</button>
+            </form>
+            <p>Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a>.</p>
+        </section>
+    </main>
+    <footer class="acessos-paginas">
+        <a href="1index.html">Início</a> |
+        <a href="6cadastro.html">Cadastro</a> |
+        <a href="perfil.html">Perfil</a> |
+        <a href="pedidos.html">Pedidos</a> |
+        <a href="7carrinho.html">Carrinho</a> |
+        <a href="8pagamento.html">Pagamento</a>
+    </footer>
 </body>
+
 </html>

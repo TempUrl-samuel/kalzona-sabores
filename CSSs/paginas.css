@@ -265,7 +265,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visib
 .pagina-interna .abertura h1 {
   line-height: 1.25;
 }
-
+/*footer*/
 .pagina-interna .acessos-paginas {
   display: flex;
   justify-content: center;
@@ -279,6 +279,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visib
   font-family: "Comic Neue", cursive;
   font-size: 18px;
 }
+/*footer*/
 
 .pagina-interna.dark-mode {
   color: white;

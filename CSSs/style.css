@@ -113,6 +113,26 @@
 
 body {
   background-color: var(--background-light);
+  /* Fade-in de 0,35s toda vez que a página é aberta */
+  animation: fade-in-pagina 0.35s ease;
+  /* Espaço no topo para o conteúdo não ficar escondido atrás do header fixo */
+  padding-top: 110px;
+}
+
+@keyframes fade-in-pagina {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Respeita quem prefere menos animação (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
 }
 
 h1 {
@@ -152,7 +172,14 @@ section {
   width: 50%;
   margin: 0 auto;
   border-radius: 0px 0px 50px 50px;
+  /* Header fixo: gruda no topo independente do scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
+
 
 #head-info a{
   text-decoration: none;
@@ -223,3 +250,70 @@ li {
 /*FOOTER*/
 /*SOBREMESAS*/
 /*SOBREMESAS*/
+
+/*=================================*/
+/*        MENU HAMBÚRGUER          */
+/*=================================*/
+
+/* Estilo do botão hambúrguer (o ícone de três linhas) */
+#botao-hamburguer {
+  background: none;
+  border: none;
+  color: var(--texto-normal);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  /* No desktop fica escondido: o menu já aparece inteiro na horizontal */
+  display: none;
+}
+
+/* No celular: vira hambúrguer (até 760px) */
+@media (max-width: 760px) {
+
+  /* O header empilha: logo + hambúrguer na primeira linha, menu embaixo */
+  #head-info {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 0 0 24px 24px;
+    padding: 12px 16px;
+  }
+
+  /* Mostra o botão hambúrguer e joga para a direita */
+  #botao-hamburguer {
+    display: block;
+    margin-left: auto;
+    order: 2;
+  }
+
+  #header-logo {
+    order: 1;
+  }
+
+  /* A lista começa ESCONDIDA no celular... */
+  #head-info #lista-header {
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0; /* fechada */
+    padding: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  /* ...e aparece quando recebe a classe "aberto" (via JS) */
+  #head-info #lista-header.aberto {
+    max-height: 600px; /* espaço suficiente para todos os itens */
+  }
+
+  /* Cada item do menu no celular ocupa a linha toda */
+  #head-info #lista-header > li {
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    margin-left: 0;
+  }
+}

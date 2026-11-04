@@ -1,42 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cadastro | Kalzona</title>
-<link rel="stylesheet" href="CSSs/style.css">
-<link rel="stylesheet" href="CSSs/paginas.css">
-<script src="script.js" defer></script>
-</head>
-<body class="pagina-interna">
-<header id="head-info">
-    <a id="header-logo" href="index.html">
-        <h1>Kalzona</h1>
-    </a>
-    <ul id="lista-header">
-        <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button"
-                aria-label="Alternar modo claro e escuro"> </button></li>
-        <li><a href="2sobre-nos.html">Sobre Nós</a></li>
-        <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
-        <li><a href="3localizacoes.html">Localizações</a></li>
-        <li><a href="4login.html">Log In</a></li>
-        <li><a href="5contato.html">Contato</a></li>
-        <li><a href="6cadastro.html">Cadastro</a></li>
-        <li><a href="7carrinho.html">Carrinho</a></li>
-    </ul>
-</header>
-<main>
-<div class="abertura"><span class="etiqueta">KALZONA • CADASTRO</span><h1>Um lugar à mesa para você.</h1><p>Crie sua conta para deixar seus dados de entrega organizados.</p></div>
 
-<section class="painel"><h2>Criar conta</h2><p class="aviso">Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem salvos.</p><form><fieldset><legend>Seus dados</legend><div class="campos"><div class="campo"><label for="nome">Nome completo</label><input id="nome" type="text" maxlength="80" autocomplete="name"></div><div class="campo"><label for="email">E-mail</label><input id="email" type="email" maxlength="120" autocomplete="email"></div><div class="campo"><label for="telefone">Celular com DDD</label><input id="telefone" type="tel" inputmode="numeric" maxlength="11" placeholder="Somente números"></div><div class="campo"><label for="senha">Senha</label><input id="senha" type="password" minlength="8" maxlength="64" autocomplete="new-password"></div></div></fieldset><fieldset><legend>Endereço de entrega</legend><div class="campos"><div class="campo"><label for="cep">CEP</label><input id="cep" type="text" inputmode="numeric" maxlength="8" placeholder="Somente números"></div><div class="campo"><label for="rua">Rua</label><input id="rua" type="text" ></div><div class="campo"><label for="numero">Número</label><input id="numero" type="text" inputmode="numeric" maxlength="6"></div><div class="campo"><label for="complemento">Complemento (opcional)</label><input id="complemento" type="text" ></div><div class="campo"><label for="cidade">Cidade</label><input id="cidade" type="text" ></div><div class="campo"><label for="estado">Estado</label><select id="estado"><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div></div></fieldset><button type="button" disabled>Criar conta</button></form><p>Já tem conta? <a href="login.html">Entrar</a>.</p></section>
-</main>
-<footer class="acessos-paginas">
-    <a href="index.html">Início</a> |
-    <a href="6cadastro.html">Cadastro</a> |
-    <a href="perfil.html">Perfil</a> |
-    <a href="pedidos.html">Pedidos</a> |
-    <a href="7carrinho.html">Carrinho</a> |
-    <a href="8pagamento.html">Pagamento</a>
-</footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Kalzona</title>
+    <link rel="stylesheet" href="CSSs/style.css">
+    <link rel="stylesheet" href="CSSs/paginas.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="pagina-interna">
+    <header id="head-info">
+        <a id="header-logo" href="index.html">
+            <h1>Kalzona</h1>
+        </a>
+                <button onclick="menuHamburguer()" id="botao-hamburguer" type="button" aria-label="Abrir menu">&#9776;</button>
+        <ul id="lista-header">
+            <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button"
+                    aria-label="Alternar modo claro e escuro"> </button></li>
+            <li><a href="2sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
+            <li><a href="3localizacoes.html">Localizações</a></li>
+            <li><a href="4login.html">Log In</a></li>
+            <li><a href="5contato.html">Contato</a></li>
+            <li><a href="7carrinho.html">Carrinho</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="abertura"><span class="etiqueta">KALZONA • CADASTRO</span>
+            <h1>Um lugar à mesa para você.</h1>
+            <p>Crie sua conta para deixar seus dados de entrega organizados.</p>
+        </div>
+
+        <section class="painel">
+    <h2>Criar conta</h2>
+    <p class="aviso">Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem salvos.</p>
+    
+    <form>
+        <fieldset>
+            <legend>Seus dados</legend>
+            <div class="campos">
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input id="nome" type="text" maxlength="80" autocomplete="name">
+                </div>
+                
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" maxlength="120" autocomplete="email">
+                </div>
+
+                <!-- NOVO CAMPO CPF ADICIONADO -->
+                <div class="campo">
+                    <label for="cpf">CPF</label>
+                    <input oninput="mascaraCPF()" id="cpf" type="text" maxlength="14" placeholder="000.000.000-00">
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Celular com DDD</label>
+                    <!-- Ajustado maxlength para 15 por causa da máscara (XX) XXXXX-XXXX -->
+                    <input oninput="mascaraTelefone()" id="telefone" type="tel" maxlength="15" placeholder="(00) 00000-0000">
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" minlength="8" maxlength="64" autocomplete="new-password">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço de entrega</legend>
+            <div class="campos">
+                <div class="campo">
+                    <label for="cep">CEP</label>
+                    <!-- Ajustado maxlength para 9 por causa do traço 00000-000 -->
+                    <input oninput="mascaraCEP()" id="cep" type="text" maxlength="9" placeholder="00000-000">
+                </div>
+                
+                <div class="campo">
+                    <label for="rua">Rua</label>
+                    <input id="rua" type="text">
+                </div>
+                
+                <div class="campo">
+                    <label for="numero">Número</label>
+                    <input oninput="limitacao()" id="numero" type="text" maxlength="6">
+                </div>
+                
+                <div class="campo">
+                    <label for="complemento">Complemento (opcional)</label>
+                    <input id="complemento" type="text">
+                </div>
+                
+                <div class="campo">
+                    <label for="cidade">Cidade</label>
+                    <input id="cidade" type="text">
+                </div>
+                
+                <div class="campo">
+                    <label for="estado">Estado</label>
+                    <select id="estado">
+                        <option value="">Selecione</option>
+                        <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                        <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                        <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                        <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                        <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                        <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                        <option>SP</option><option>SE</option><option>TO</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        
+        <button type="button" disabled>Criar conta</button>
+    </form>
+    
+    <p>Já tem conta? <a href="4login.html">Entrar</a>.</p>
+</section>
+    </main>
+    <footer class="acessos-paginas">
+        <a href="index.html">Início</a> |
+        <a href="6cadastro.html">Cadastro</a> |
+        <a href="perfil.html">Perfil</a> |
+        <a href="pedidos.html">Pedidos</a> |
+        <a href="7carrinho.html">Carrinho</a> |
+        <a href="8pagamento.html">Pagamento</a>
+    </footer>
 </body>
+
 </html>

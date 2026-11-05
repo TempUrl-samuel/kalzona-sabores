@@ -317,3 +317,21 @@ li {
     margin-left: 0;
   }
 }
+/*LOGO DO HEADER*/
+#header-logo {
+  display: flex;
+  align-items: center;
+}
+
+#header-logo img {
+  height: 64px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  #header-logo img {
+    height: 48px;
+  }
+}
+/*LOGO DO HEADER*/

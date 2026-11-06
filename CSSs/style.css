@@ -335,3 +335,95 @@ li {
   }
 }
 /*LOGO DO HEADER*/
+
+/*BORDA PADRÃO (a mesma do header e das seções da página inicial)*/
+.abertura,
+.painel,
+.acessos-paginas {
+  border: outset 5px rgb(145, 71, 2);
+}
+
+/*footer com cantos arredondados em cima, espelhando o header*/
+.acessos-paginas {
+  border-radius: 50px 50px 0 0;
+}
+/*BORDA PADRÃO*/
+
+/*BOTÃO DE PERFIL (circular, no header)*/
+#head-info #botao-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--btn-bg);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#head-info #botao-perfil:hover {
+  transform: scale(1.12);
+}
+
+#botao-perfil svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+/*BOTÃO DE PERFIL*/
+
+/*FOTO DE PERFIL*/
+#head-info #botao-perfil {
+  overflow: hidden;
+  padding: 0;
+}
+
+#botao-perfil img,
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.foto-area {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.foto-perfil {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--btn-bg);
+  color: white;
+  border: outset 5px rgb(145, 71, 2);
+}
+
+.foto-perfil svg {
+  width: 60%;
+  height: 60%;
+  fill: currentColor;
+}
+
+.foto-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.foto-acoes button {
+  cursor: pointer;
+}
+/*FOTO DE PERFIL*/

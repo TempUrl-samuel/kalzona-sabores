@@ -23,8 +23,10 @@
             <li><a href="index.html#sabores-e-alternativas">Cardápio</a></li>
             <li><a href="3localizacoes.html">Localizações</a></li>
             <li><a href="4login.html">Log In</a></li>
-            <li><a href="5contato.html">Contato</a></li>
             <li><a href="7carrinho.html">Carrinho</a></li>
+            <li><a id="botao-perfil" href="perfil.html" aria-label="Meu perfil" title="Meu perfil">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>
+            </a></li>
         </ul>
     </header>
     <main>
@@ -34,9 +36,21 @@
         </div>
         <section class="painel">
             <h2>Meus dados</h2>
-            <p class="aviso">Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem
-                salvos.</p>
-            <form>
+            <p class="aviso">Seus dados e sua foto ficam salvos apenas neste navegador. Nada é enviado para a Kalzona.</p>
+
+            <!-- FOTO DE PERFIL: aparece aqui e no botão redondo do header -->
+            <div class="foto-area">
+                <div id="foto-preview" class="foto-perfil">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>
+                </div>
+                <div class="foto-acoes">
+                    <input id="input-foto" type="file" accept="image/*" onchange="trocarFoto(this)" hidden>
+                    <button type="button" onclick="document.getElementById('input-foto').click()">Alterar foto</button>
+                    <button type="button" id="remover-foto" onclick="removerFoto()">Remover foto</button>
+                </div>
+            </div>
+
+            <form id="form-perfil">
                 <div class="campos">
                     <div class="campo"><label for="nome">Nome completo</label><input id="nome" type="text"
                             maxlength="80"></div>
@@ -87,14 +101,15 @@
                                 <option>TO</option>
                             </select></div>
                     </div>
-                </fieldset><button type="button" disabled>Salvar alterações</button>
+                </fieldset><button type="button" onclick="salvarPerfil()">Salvar alterações</button>
+                <p id="status-perfil" class="ajuda" role="status"></p>
             </form>
         </section>
     </main>
     <footer class="acessos-paginas">
         <a href="index.html">Início</a>
         | <a href="6cadastro.html">Cadastro</a>
-        | <a href="perfil.html">Perfil</a>
+        | <a href="5contato.html">Contato</a>
         | <a href="pedidos.html">Pedidos</a>
         | <a href="7carrinho.html">Carrinho</a> |
         <a href="8pagamento.html">Pagamento</a>

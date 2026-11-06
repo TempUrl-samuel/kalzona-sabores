@@ -266,7 +266,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visib
   line-height: 1.25;
 }
 /*footer*/
-.pagina-interna .acessos-paginas {
+.acessos-paginas {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -275,7 +275,8 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visib
   background-color: var(--stand-out);
 }
 
-.pagina-interna .acessos-paginas a {
+.acessos-paginas a {
+  color: inherit;
   font-family: "Comic Neue", cursive;
   font-size: 18px;
 }
@@ -285,7 +286,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visib
   color: white;
 }
 
-.pagina-interna.dark-mode #head-info, .pagina-interna.dark-mode .acessos-paginas {
+.pagina-interna.dark-mode #head-info, .dark-mode .acessos-paginas {
   background-color: var(--stand-out-dark);
 }
 

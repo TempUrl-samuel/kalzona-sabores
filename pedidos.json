@@ -1,0 +1,57 @@
+{
+    "id_pedido": 1001,
+    "data_pedido": "2026-11-09T15:10:00Z",
+    "status": "Pendente",
+    "forma_pagamento": "Cartão de Crédito",
+    "taxa_entrega": 7.50,
+    "valor_total": 157.30,
+    "observacao": "Entregar após as 18h. Tocar o interfone do bloco B.",
+    "cliente": {
+        "id_cliente": 42,
+        "nome": "João Silva",
+        "email": "joao.silva@email.com",
+        "senha_hash": "$2y$12$eImiTXuWVxfM37uY4JANjOL.oFf...",
+        "telefone": "(11) 99999-1234"
+    },
+    "endereco_entrega": {
+        "id_endereco": 85,
+        "cep": "01310-100",
+        "estado": "SP",
+        "cidade": "São Paulo",
+        "rua": "Avenida Paulista",
+        "numero": "1000",
+        "complemento": "Apto 42"
+    },
+    "itens": [
+        {
+            "id_item": 1,
+            "quantidade": 2,
+            "preco_unitario": 49.90,
+            "produto": {
+                "id_produto": 10,
+                "nome": "Camiseta Geek Binária",
+                "tipo": "Vestuário",
+                "descricao": "Camiseta 100% algodão com estampa exclusiva de código.",
+                "preco": 49.90,
+                "imagem": "https://meusite.com",
+                "disponivel": 1,
+                "PRODUTOcol": "Coleção Inverno"
+            }
+        },
+        {
+            "id_item": 2,
+            "quantidade": 1,
+            "preco_unitario": 50.00,
+            "produto": {
+                "id_produto": 25,
+                "nome": "Caneca Programador C#",
+                "tipo": "Utensílios",
+                "descricao": "Caneca de porcelana preta 320ml resistente a micro-ondas.",
+                "preco": 50.00,
+                "imagem": "https://meusite.com",
+                "disponivel": 1,
+                "PRODUTOcol": "Edição Limitada"
+            }
+        }
+    ]
+}

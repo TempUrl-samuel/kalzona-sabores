@@ -197,18 +197,32 @@ function trocarFoto(input) {
     leitor.readAsDataURL(arquivo)
 }
 
-// Botão "Remover foto"
 function removerFoto() {
     apagarStorage(CHAVE_FOTO)
     atualizarFotos()
     avisoPerfil("Foto removida.")
 }
 
-// Ao abrir qualquer página: mostra a foto no botão do header (e preenche o perfil, se for a página de perfil)
 atualizarFotos()
 carregarPerfil()
 
-// Se a foto mudar em outra aba aberta do site, atualiza esta também
 window.addEventListener("storage", atualizarFotos)
 
-//perfil.
+//ferramenta de busca
+function filtrarItens() {
+    const input = document.getElementById('campo-busca');
+    const termo = input.value.toLowerCase().trim();
+    const lista = document.getElementById('lista-itens');
+    const itens = document.querySelectorAll('#lista-itens li');
+
+    if (termo === '') {
+      lista.style.display = 'none';
+      return;
+    }
+        lista.style.display = 'block';
+
+    itens.forEach(item => {
+      const textoItem = item.textContent.toLowerCase();
+      item.style.display = textoItem.startsWith(termo) ? '' : 'none';
+    });
+  }

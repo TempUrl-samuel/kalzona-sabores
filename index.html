@@ -16,7 +16,7 @@
         <a id="header-logo" href="index.html">
             <img src="IMAGENS/Logotipo retrô Kalzona com swoosh dourado.png" alt="Kalzona">
         </a>
-                <button onclick="menuHamburguer()" id="botao-hamburguer" type="button" aria-label="Abrir menu">&#9776;</button>
+        <button onclick="menuHamburguer()" id="botao-hamburguer" type="button" aria-label="Abrir menu">&#9776;</button>
         <ul id="lista-header">
             <li id="btn-dark">Dark Mode <button onclick="tema()" id="botao-tema" type="button"
                     aria-label="Alternar modo claro e escuro"> </button></li>
@@ -25,9 +25,31 @@
             <li><a href="3localizacoes.html">Localizações</a></li>
             <li><a href="4login.html">Log In</a></li>
             <li><a href="7carrinho.html">Carrinho</a></li>
+            <li>
+                <search>
+                    <input type="search" id="campo-busca" placeholder="Digite para pesquisar..."
+                        onkeyup="filtrarItens()">
+                </search>
+                <ul id="lista-itens">
+                    <li>calzone de calabresa</li>
+                    <li>calzone de frango com catupiry</li>
+                    <li>calzone vegetariana</li>
+                    <li>esfiha de calabresa</li>
+                    <li>esfiha de frango com catupiry</li>
+                    <li>esfiha vegetariana</li>
+                    <li>calzonde de nutella com morango</li>
+                    <li>calzonde de doce de leite com banana</li>
+                    <li>esfiha de nutella com morango</li>
+                    <li>esfiha de doce de leite com banana</li>
+                    <li>molho de chocolate</li>
+                </ul>
+            </li>
             <li><a id="botao-perfil" href="perfil.html" aria-label="Meu perfil" title="Meu perfil">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>
-            </a></li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" />
+                    </svg>
+                </a></li>
         </ul>
     </header>
     <main>

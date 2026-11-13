@@ -3,7 +3,6 @@ function tema() {
     let tema = document.body
     tema.classList.toggle("dark-mode")
 
-    // Salva a escolha no navegador para lembrar nas outras páginas
     if (tema.classList.contains("dark-mode")) {
         localStorage.setItem("tema", "dark")
     } else {
@@ -16,20 +15,18 @@ function tema() {
     btn.classList.add("girar")
 }
 
-// Ao abrir qualquer página, reaplica o tema que foi salvo antes
 if (localStorage.getItem("tema") === "dark") {
     document.body.classList.add("dark-mode")
 }
 
-// Menu hambúrguer: abre/fecha a lista do header no celular
 function menuHamburguer() {
     document.getElementById("lista-header").classList.toggle("aberto")
 }
 
-//para qualquer pagina.
+
 //Cadastro
 
-// Máscara de Celular: (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
+
 function mascaraTelefone() {
     var campo = document.getElementById("telefone");
     var valor = campo.value.replace(/\D/g, ""); // Remove tudo que não for número
@@ -47,39 +44,38 @@ function mascaraTelefone() {
     }
 }
 
-// Máscara de CEP: 00000-000
+
 function mascaraCEP() {
     var campo = document.getElementById("cep");
-    var valor = campo.value.replace(/\D/g, ""); // Remove tudo que não for número
+    var valor = campo.value.replace(/\D/g, "");
 
     campo.value = valor.replace(/^(\d{5})(\d{1,3}).*/, "$1-$2");
 }
 
-// Máscara de CPF: 000.000.000-00
+
 function mascaraCPF() {
     var campo = document.getElementById("cpf");
-    var valor = campo.value.replace(/\D/g, ""); // Remove tudo que não for número
+    var valor = campo.value.replace(/\D/g, "");
 
     campo.value = valor
         .replace(/^(\d{3})(\d)/, "$1.$2")
         .replace(/^(\d{3})\.(\d{3})(\d)/, "$1.$2.$3")
         .replace(/\.(\d{3})(\d)/, ".$1-$2")
-        .slice(0, 14); // Garante que não passe de 14 caracteres
+        .slice(0, 14);
 }
 
-// Mantendo sua função de limitação de número se necessário
+
 function limitacao() {
     var numero = document.getElementById("numero");
-    numero.value = numero.value.replace(/\D/g, ""); // Permite só números no campo 'Número'
+    numero.value = numero.value.replace(/\D/g, ""); 
 }
 //cadastro.
 //PERFIL (salvo no localStorage do navegador)
 
-var CHAVE_PERFIL = "perfil"         // dados do formulário
-var CHAVE_FOTO = "fotoPerfil"       // foto em formato de texto (data URL)
+var CHAVE_PERFIL = "perfil"
+var CHAVE_FOTO = "fotoPerfil"
 var CAMPOS_PERFIL = ["nome", "email", "telefone", "cep", "rua", "numero", "complemento", "cidade", "estado"]
 
-// O localStorage pode falhar (aba anônima, armazenamento cheio), por isso o try/catch
 function lerStorage(chave) {
     try { return localStorage.getItem(chave) } catch (e) { return null }
 }
@@ -92,8 +88,7 @@ function apagarStorage(chave) {
     try { localStorage.removeItem(chave) } catch (e) { }
 }
 
-// Coloca a foto salva dentro de um círculo (o botão do header ou a prévia do perfil)
-// Sem foto salva, volta a mostrar o ícone de pessoa
+
 function aplicarFoto(elemento) {
     if (!elemento) return
     var foto = lerStorage(CHAVE_FOTO)
@@ -127,7 +122,7 @@ function avisoPerfil(texto) {
     if (status) status.textContent = texto
 }
 
-// Preenche o formulário do perfil com o que já foi salvo
+
 function carregarPerfil() {
     if (!document.getElementById("form-perfil")) return
     var dados = {}
@@ -139,7 +134,7 @@ function carregarPerfil() {
     })
 }
 
-// Botão "Salvar alterações"
+
 function salvarPerfil() {
     var dados = {}
     CAMPOS_PERFIL.forEach(function (id) {
@@ -154,11 +149,10 @@ function salvarPerfil() {
     }
 }
 
-// Botão "Alterar foto": reduz a imagem para 256x256 (recorte quadrado no centro)
-// para caber no localStorage, salva e já atualiza o botão do header
+// Botão "Alterar foto"
 function trocarFoto(input) {
     var arquivo = input.files[0]
-    input.value = "" // permite escolher a mesma foto de novo depois
+    input.value = ""
     if (!arquivo) return
 
     if (!arquivo.type.startsWith("image/")) {
@@ -176,7 +170,7 @@ function trocarFoto(input) {
             canvas.width = tamanho
             canvas.height = tamanho
             var ctx = canvas.getContext("2d")
-            ctx.fillStyle = "white" // fundo branco para PNG transparente não ficar preto
+            ctx.fillStyle = "white"
             ctx.fillRect(0, 0, tamanho, tamanho)
             ctx.drawImage(
                 imagem,
@@ -208,21 +202,100 @@ carregarPerfil()
 
 window.addEventListener("storage", atualizarFotos)
 
-//ferramenta de busca
+//FERRAMENTA DE BUSCA
+var ITENS_BUSCA = [
+    "Calzone de calabresa",
+    "Calzone de frango com catupiry",
+    "Calzone vegetariano",
+    "Esfiha de calabresa",
+    "Esfiha de frango com catupiry",
+    "Esfiha vegetariana",
+    "Calzone de nutella com morango",
+    "Calzone de doce de leite com banana",
+    "Esfiha de nutella com morango",
+    "Esfiha de doce de leite com banana",
+    "Breadsticks",
+    "Stromboli",
+    "Molho de chocolate para breadsticks"
+]
+
+var DESTINO_BUSCA = "index.html#sabores-e-alternativas"
+
+function normalizar(texto) {
+    return texto.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim()
+}
+
+// Cria a caixa de busca uma única vez (um <dialog>, que fica por cima de tudo)
+function criarBusca() {
+    var caixa = document.createElement("dialog")
+    caixa.id = "caixa-busca"
+    caixa.innerHTML =
+        '<div class="busca-conteudo">' +
+        '  <div class="busca-topo">' +
+        '    <input type="search" id="campo-busca" placeholder="O que você procura?" autocomplete="off" aria-label="Pesquisar no cardápio">' +
+        '    <button type="button" id="fechar-busca" aria-label="Fechar pesquisa">&times;</button>' +
+        '  </div>' +
+        '  <ul id="lista-itens"></ul>' +
+        '  <p id="busca-vazia" hidden>Nenhum item encontrado.</p>' +
+        '</div>'
+    document.body.appendChild(caixa)
+
+    var campo = document.getElementById("campo-busca")
+    campo.addEventListener("input", filtrarItens)
+
+    campo.addEventListener("keydown", function (evento) {
+        if (evento.key === "Escape") {
+            evento.preventDefault()
+            fecharBusca()
+        }
+    })
+    document.getElementById("fechar-busca").addEventListener("click", fecharBusca)
+
+    caixa.addEventListener("click", function (evento) {
+        if (evento.target === caixa) fecharBusca()
+    })
+    return caixa
+}
+
+function abrirBusca() {
+    var caixa = document.getElementById("caixa-busca") || criarBusca()
+    var campo = document.getElementById("campo-busca")
+    campo.value = ""
+    filtrarItens()
+    caixa.showModal() 
+    campo.focus()
+}
+
+function fecharBusca() {
+    var caixa = document.getElementById("caixa-busca")
+    if (caixa && caixa.open) caixa.close()
+}
+
 function filtrarItens() {
-    const input = document.getElementById('campo-busca');
-    const termo = input.value.toLowerCase().trim();
-    const lista = document.getElementById('lista-itens');
-    const itens = document.querySelectorAll('#lista-itens li');
+    var termo = normalizar(document.getElementById("campo-busca").value)
+    var lista = document.getElementById("lista-itens")
+    var vazio = document.getElementById("busca-vazia")
+    lista.innerHTML = ""
 
-    if (termo === '') {
-      lista.style.display = 'none';
-      return;
+    if (termo === "") {
+        vazio.hidden = true
+        return
     }
-        lista.style.display = 'block';
 
-    itens.forEach(item => {
-      const textoItem = item.textContent.toLowerCase();
-      item.style.display = textoItem.startsWith(termo) ? '' : 'none';
-    });
-  }
+    var encontrados = ITENS_BUSCA.filter(function (item) {
+        return normalizar(item).includes(termo)
+    })
+
+    encontrados.forEach(function (item) {
+        var li = document.createElement("li")
+        var link = document.createElement("a")
+        link.href = DESTINO_BUSCA
+        link.textContent = item
+        link.addEventListener("click", fecharBusca)
+        li.appendChild(link)
+        lista.appendChild(li)
+    })
+
+    vazio.hidden = encontrados.length > 0
+}
+//ferramenta de busca.

@@ -3,6 +3,7 @@ function tema() {
     let tema = document.body
     tema.classList.toggle("dark-mode")
 
+    // Salva a escolha no navegador para lembrar nas outras páginas
     if (tema.classList.contains("dark-mode")) {
         localStorage.setItem("tema", "dark")
     } else {
@@ -15,18 +16,20 @@ function tema() {
     btn.classList.add("girar")
 }
 
+// Ao abrir qualquer página, reaplica o tema que foi salvo antes
 if (localStorage.getItem("tema") === "dark") {
     document.body.classList.add("dark-mode")
 }
 
+// Menu hambúrguer: abre/fecha a lista do header no celular
 function menuHamburguer() {
     document.getElementById("lista-header").classList.toggle("aberto")
 }
 
-
+//para qualquer pagina.
 //Cadastro
 
-
+// Máscara de Celular: (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
 function mascaraTelefone() {
     var campo = document.getElementById("telefone");
     var valor = campo.value.replace(/\D/g, ""); // Remove tudo que não for número
@@ -44,38 +47,39 @@ function mascaraTelefone() {
     }
 }
 
-
+// Máscara de CEP: 00000-000
 function mascaraCEP() {
     var campo = document.getElementById("cep");
-    var valor = campo.value.replace(/\D/g, "");
+    var valor = campo.value.replace(/\D/g, ""); // Remove tudo que não for número
 
     campo.value = valor.replace(/^(\d{5})(\d{1,3}).*/, "$1-$2");
 }
 
-
+// Máscara de CPF: 000.000.000-00
 function mascaraCPF() {
     var campo = document.getElementById("cpf");
-    var valor = campo.value.replace(/\D/g, "");
+    var valor = campo.value.replace(/\D/g, ""); // Remove tudo que não for número
 
     campo.value = valor
         .replace(/^(\d{3})(\d)/, "$1.$2")
         .replace(/^(\d{3})\.(\d{3})(\d)/, "$1.$2.$3")
         .replace(/\.(\d{3})(\d)/, ".$1-$2")
-        .slice(0, 14);
+        .slice(0, 14); // Garante que não passe de 14 caracteres
 }
 
-
+// Mantendo sua função de limitação de número se necessário
 function limitacao() {
     var numero = document.getElementById("numero");
-    numero.value = numero.value.replace(/\D/g, ""); 
+    numero.value = numero.value.replace(/\D/g, ""); // Permite só números no campo 'Número'
 }
 //cadastro.
 //PERFIL (salvo no localStorage do navegador)
 
-var CHAVE_PERFIL = "perfil"
-var CHAVE_FOTO = "fotoPerfil"
+var CHAVE_PERFIL = "perfil"         // dados do formulário
+var CHAVE_FOTO = "fotoPerfil"       // foto em formato de texto (data URL)
 var CAMPOS_PERFIL = ["nome", "email", "telefone", "cep", "rua", "numero", "complemento", "cidade", "estado"]
 
+// O localStorage pode falhar (aba anônima, armazenamento cheio), por isso o try/catch
 function lerStorage(chave) {
     try { return localStorage.getItem(chave) } catch (e) { return null }
 }
@@ -88,7 +92,8 @@ function apagarStorage(chave) {
     try { localStorage.removeItem(chave) } catch (e) { }
 }
 
-
+// Coloca a foto salva dentro de um círculo (o botão do header ou a prévia do perfil)
+// Sem foto salva, volta a mostrar o ícone de pessoa
 function aplicarFoto(elemento) {
     if (!elemento) return
     var foto = lerStorage(CHAVE_FOTO)
@@ -122,7 +127,7 @@ function avisoPerfil(texto) {
     if (status) status.textContent = texto
 }
 
-
+// Preenche o formulário do perfil com o que já foi salvo
 function carregarPerfil() {
     if (!document.getElementById("form-perfil")) return
     var dados = {}
@@ -134,7 +139,7 @@ function carregarPerfil() {
     })
 }
 
-
+// Botão "Salvar alterações"
 function salvarPerfil() {
     var dados = {}
     CAMPOS_PERFIL.forEach(function (id) {
@@ -149,10 +154,11 @@ function salvarPerfil() {
     }
 }
 
-// Botão "Alterar foto"
+// Botão "Alterar foto": reduz a imagem para 256x256 (recorte quadrado no centro)
+// para caber no localStorage, salva e já atualiza o botão do header
 function trocarFoto(input) {
     var arquivo = input.files[0]
-    input.value = ""
+    input.value = "" // permite escolher a mesma foto de novo depois
     if (!arquivo) return
 
     if (!arquivo.type.startsWith("image/")) {
@@ -170,7 +176,7 @@ function trocarFoto(input) {
             canvas.width = tamanho
             canvas.height = tamanho
             var ctx = canvas.getContext("2d")
-            ctx.fillStyle = "white"
+            ctx.fillStyle = "white" // fundo branco para PNG transparente não ficar preto
             ctx.fillRect(0, 0, tamanho, tamanho)
             ctx.drawImage(
                 imagem,
@@ -203,6 +209,7 @@ carregarPerfil()
 window.addEventListener("storage", atualizarFotos)
 
 //FERRAMENTA DE BUSCA
+// A lista fica só aqui: para adicionar um item, é só incluir uma linha
 var ITENS_BUSCA = [
     "Calzone de calabresa",
     "Calzone de frango com catupiry",
@@ -219,8 +226,10 @@ var ITENS_BUSCA = [
     "Molho de chocolate para breadsticks"
 ]
 
+// Para onde cada resultado leva quando é clicado
 var DESTINO_BUSCA = "index.html#sabores-e-alternativas"
 
+// Tira acentos e deixa minúsculo, para "VEGETARIANO" ou "vegetariáno" acharem "vegetariano"
 function normalizar(texto) {
     return texto.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim()
 }
@@ -243,6 +252,7 @@ function criarBusca() {
     var campo = document.getElementById("campo-busca")
     campo.addEventListener("input", filtrarItens)
 
+    // Esc fecha na hora (sem isso, o Chrome usa o 1º Esc só para apagar o texto)
     campo.addEventListener("keydown", function (evento) {
         if (evento.key === "Escape") {
             evento.preventDefault()
@@ -251,6 +261,7 @@ function criarBusca() {
     })
     document.getElementById("fechar-busca").addEventListener("click", fecharBusca)
 
+    // Clicar fora da caixa (no fundo escuro) também fecha
     caixa.addEventListener("click", function (evento) {
         if (evento.target === caixa) fecharBusca()
     })
@@ -262,7 +273,7 @@ function abrirBusca() {
     var campo = document.getElementById("campo-busca")
     campo.value = ""
     filtrarItens()
-    caixa.showModal() 
+    caixa.showModal() // a tecla Esc fecha sozinha
     campo.focus()
 }
 
@@ -271,6 +282,7 @@ function fecharBusca() {
     if (caixa && caixa.open) caixa.close()
 }
 
+// Mostra só os itens que contêm o que foi digitado
 function filtrarItens() {
     var termo = normalizar(document.getElementById("campo-busca").value)
     var lista = document.getElementById("lista-itens")

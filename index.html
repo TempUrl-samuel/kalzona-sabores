@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="CSSs/inicio.css">
     <link rel="stylesheet" href="CSSs/paginas.css">
     <script src="script.js" defer></script>
+    <script src="delivery.js" defer></script>
 </head>
 
 <body class="pagina-inicial">
     <header id="head-info">
         <a id="header-logo" href="index.html">
-            <img src="IMAGENS/Logotipo retrô Kalzona com swoosh dourado.png" alt="Kalzona">
+            <img src="https://raw.githubusercontent.com/TempUrl-samuel/kalzona-sabores/3753fbda74b2c33870ff4ec2bc37c6ddbb79d517/IMAGENS/Logotipo%20retr%C3%B4%20Kalzona%20com%20swoosh%20dourado.png" alt="Kalzona">
         </a>
         <button onclick="abrirBusca()" id="botao-busca" type="button" aria-label="Pesquisar no cardápio" title="Pesquisar">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
@@ -46,7 +47,7 @@
                 </h1>
             </div>
             <div>
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="Espaço reservado para a imagem da Kalzona">
+                <img src="IMAGENS/calzone-assado.jpg" alt="Calzone assado">
             </div>
         </section>
         <div class="abertura"><span class="etiqueta">KALZONA • SOBRE NÓS</span>
@@ -64,41 +65,42 @@
         <section id="sabores-e-alternativas">
             <h1>Apenas uma fração dos sabores que possuímos:</h1>
             <div id="inicio-sabores">
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
+                <img src="IMAGENS/calzone-assado.jpg" alt="">
 
             </div>
             <div class="sabores-calzone">
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <h3>calabresa</h3>
-                <h3>frango com catupiry</h3>
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <h3>vegetariana</h3>
+                <img src="IMAGENS/calabresa.jpg" alt="Calzone de calabresa">
+                <h3>calabresa<br><button type="button" data-produto="1" disabled>Carregando preço…</button></h3>
+                <h3>frango com catupiry<br><button type="button" data-produto="2" disabled>Carregando preço…</button></h3>
+                <img src="IMAGENS/frango-catupiry.jpg" alt="Calzone de frango com catupiry">
+                <img src="IMAGENS/vegetariana.jpg" alt="Calzone vegetariano">
+                <h3>vegetariana<br><button type="button" data-produto="3" disabled>Carregando preço…</button></h3>
             </div>
             <h1>MAS SE NÃO QUISER, TAMBÉM TEMOS OUTRAS OPÇÕES</h1>
             <div class="sabores-calzone">
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <h3>opcao vegetariana</h3>
-                <h3>esfihas</h3>
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <h3>breadsticks</h3>
-                <h3>stromboli</h3>
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
+                <img src="IMAGENS/vegetariana-cogumelos.jpg" alt="Calzone de cogumelos">
+                <h3>opcao vegetariana<br><button type="button" data-produto="4" disabled>Carregando preço…</button></h3>
+                <h3>esfihas<br><button type="button" data-produto="5" disabled>Carregando preço…</button></h3>
+                <img src="IMAGENS/esfiha.jpg" alt="Esfiha salgada">
+                <img src="IMAGENS/breadsticks.jpg" alt="Breadsticks assados">
+                <h3>breadsticks<br><button type="button" data-produto="6" disabled>Carregando preço…</button></h3>
+                <h3>stromboli<br><button type="button" data-produto="7" disabled>Carregando preço…</button></h3>
+                <img src="IMAGENS/stromboli.jpg" alt="Stromboli fatiado">
             </div>
             <div class="sabores-calzone">
                 <h1>VAI UM DOCE AÍ?</h1>
                 <br>
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <h3>calzone de nutella com morango</h3>
-                <h3>calzone de doce de leite e banana</h3>
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
-                <h3>molho de chocolate para breadsticks</h3>
-                <h3>esfihas doces</h3>
-                <img src="IMAGENS/Imagem_não_disponível.svg" alt="">
+                <img src="IMAGENS/nutella-morango.jpg" alt="Calzone de Nutella com morango">
+                <h3>calzone de nutella com morango<br><button type="button" data-produto="8" disabled>Carregando preço…</button></h3>
+                <h3>calzone de doce de leite e banana<br><button type="button" data-produto="9" disabled>Carregando preço…</button></h3>
+                <img src="IMAGENS/banana-doce-de-leite.jpg" alt="Calzone de banana com doce de leite">
+                <img src="IMAGENS/molho-chocolate.jpg" alt="Molho de chocolate com breadsticks">
+                <h3>molho de chocolate para breadsticks<br><button type="button" data-produto="10" disabled>Carregando preço…</button></h3>
+                <h3>esfihas doces<br><button type="button" data-produto="11" disabled>Carregando preço…</button></h3>
+                <img src="IMAGENS/esfihas-doces.jpg" alt="Esfihas doces">
             </div>
         </section>
+    <p id="retorno" class="ajuda" role="status" aria-live="polite"></p>
     </main>
     <footer class="acessos-paginas">
         <a href="index.html">Início</a> |

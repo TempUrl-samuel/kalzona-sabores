@@ -7,13 +7,14 @@
 <link rel="stylesheet" href="CSSs/style.css">
 <link rel="stylesheet" href="CSSs/paginas.css">
 <script src="script.js" defer></script>
+    <script src="delivery.js" defer></script>
 </head>
 <body class="pagina-interna">
 <header id="head-info">
     <a id="header-logo" href="index.html">
-        <img src="IMAGENS/Logotipo retrô Kalzona com swoosh dourado.png" alt="Kalzona">
+        <img src="https://raw.githubusercontent.com/TempUrl-samuel/kalzona-sabores/3753fbda74b2c33870ff4ec2bc37c6ddbb79d517/IMAGENS/Logotipo%20retr%C3%B4%20Kalzona%20com%20swoosh%20dourado.png" alt="Kalzona">
     </a>
-            <button onclick="abrirBusca()" id="botao-busca" type="button" aria-label="Pesquisar no cardápio" title="Pesquisar">
+        <button onclick="abrirBusca()" id="botao-busca" type="button" aria-label="Pesquisar no cardápio" title="Pesquisar">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
         </button>
         <button onclick="menuHamburguer()" id="botao-hamburguer" type="button" aria-label="Abrir menu">&#9776;</button>
@@ -33,8 +34,9 @@
 <main>
 <div class="abertura"><span class="etiqueta">KALZONA • PAGAMENTO</span><h1>Falta pouco para sair do forno.</h1><p>Confira a entrega e escolha como deseja pagar.</p></div>
 
-<div class="duas-colunas"><section class="painel"><h2>Entrega e pagamento</h2><p class="aviso">Prévia do projeto: os campos podem ser preenchidos, mas os dados ainda não são enviados nem salvos.</p><form><fieldset><legend>Endereço de entrega</legend><div class="campos"><div class="campo"><label for="cep">CEP</label><input id="cep" type="text" inputmode="numeric" maxlength="8" placeholder="Somente números"></div><div class="campo"><label for="rua">Rua</label><input id="rua" type="text" ></div><div class="campo"><label for="numero">Número</label><input id="numero" type="text" inputmode="numeric" maxlength="6"></div><div class="campo"><label for="complemento">Complemento (opcional)</label><input id="complemento" type="text" ></div><div class="campo"><label for="cidade">Cidade</label><input id="cidade" type="text" ></div><div class="campo"><label for="estado">Estado</label><select id="estado"><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div></div></fieldset><fieldset><legend>Forma de pagamento</legend><label class="opcao"><input type="radio" name="pagamento" value="pix" checked> Pix</label><label class="opcao"><input type="radio" name="pagamento" value="cartao"> Cartão na entrega</label><label class="opcao"><input type="radio" name="pagamento" value="dinheiro"> Dinheiro na entrega</label><p class="ajuda">Opções ilustrativas. As formas aceitas ainda precisam ser confirmadas pela equipe.</p></fieldset><div class="campo"><label for="observacao">Observação para a entrega (opcional)</label><textarea id="observacao" rows="3" maxlength="300"></textarea></div><button type="button" disabled>Confirmar pedido</button></form></section><aside class="painel azul"><h2>Seu pedido</h2><p>O carrinho está vazio.</p><dl><div><dt>Subtotal</dt><dd>R$ 0,00</dd></div><div><dt>Entrega</dt><dd>A calcular</dd></div></dl><p>Esta prévia não gera cobrança nem confirma pedidos.</p><a href="7carrinho.html">Voltar ao carrinho</a></aside></div>
-</main>
+<div class="duas-colunas"><section class="painel"><h2>Entrega e pagamento</h2><form><fieldset><legend>Endereço de entrega</legend><div class="campos"><div class="campo"><label for="cep">CEP</label><input id="cep" type="text" inputmode="numeric" maxlength="8" placeholder="Somente números"></div><div class="campo"><label for="rua">Rua</label><input id="rua" type="text" ></div><div class="campo"><label for="numero">Número</label><input id="numero" type="text" inputmode="numeric" maxlength="6"></div><div class="campo"><label for="complemento">Complemento (opcional)</label><input id="complemento" type="text" ></div><div class="campo"><label for="cidade">Cidade</label><input id="cidade" type="text" ></div><div class="campo"><label for="estado">Estado</label><select id="estado"><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div></div></fieldset><fieldset><legend>Forma de pagamento</legend><label class="opcao"><input type="radio" name="pagamento" value="pix" checked> Pix</label><label class="opcao"><input type="radio" name="pagamento" value="cartao"> Cartão na entrega</label><label class="opcao"><input type="radio" name="pagamento" value="dinheiro"> Dinheiro na entrega</label><p class="ajuda">O pagamento é feito na entrega.</p></fieldset><div class="campo"><label for="observacao">Observação para a entrega (opcional)</label><textarea id="observacao" rows="3" maxlength="300"></textarea></div><button type="submit">Confirmar pedido</button></form></section><aside class="painel azul"><h2>Seu pedido</h2><div id="resumo"></div><a href="7carrinho.html">Voltar ao carrinho</a></aside></div>
+<p id="retorno" class="ajuda" role="status" aria-live="polite"></p>
+    </main>
 <footer class="acessos-paginas">
     <a href="index.html">Início</a> |
     <a href="6cadastro.html">Cadastro</a> |
@@ -45,3 +47,4 @@
 </footer>
 </body>
 </html>
+

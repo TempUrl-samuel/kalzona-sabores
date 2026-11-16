@@ -1,0 +1,609 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kavoon&display=swap');
+/* .kavoon-regular {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kavoon&family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+/* .londrina-solid-regular {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+/*Fontes*/
+/*Botão dark mode*/
+
+:root {
+  --btn-bg: hsl(226, 69%, 23%);
+  --texto-dark: white;
+  --texto-normal: black;
+  --background-light: rgb(148, 224, 224);
+  --background-dark: rgb(58, 19, 94);
+  --stand-out: rgb(248, 158, 55);
+  --stand-out-dark: rgb(16, 67, 134);
+}
+
+/*botao em si*/
+#btn-dark {
+  color: var(--texto-dark);
+  background-color: var(--btn-bg);
+  border-style: none;
+  padding: 1.5vh 2vh;
+  width: max-content;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 50px;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+}
+
+#botao-tema {
+  padding: 4vh;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 30%,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(8px) saturate(1.5);
+  -webkit-backdrop-filter: blur(8px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#botao-tema:hover {
+  transform: scale(1.15);
+}
+
+/*botao em si*/
+
+
+.dark-mode {
+  background: linear-gradient(180deg, rgba(128, 60, 115, 1), var(--background-dark));
+  background-attachment: fixed;
+  color: var(--texto-dark);
+
+
+  .dark-mode .hovering-bg {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark-mode .hovering-bg:hover {
+    background-color: var(--stand-out-dark);
+    transition: background-color 0.5s ease;
+  }
+
+  .dark-mode .head-info {
+    background-color: var(--stand-out-dark);
+
+  }
+
+  .dark-mode h1 {
+    background: linear-gradient(135deg,
+        rgba(147, 79, 94, 0.45),
+        rgba(147, 79, 94, 0.15));
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .head-info h1 {
+    color: var(--texto-dark);
+  }
+}
+
+/*Botão dark mode*/
+
+
+/*Para o SITE INTEIRO*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-light);
+  animation: fade-in-pagina 0.35s ease;
+  padding-top: 110px;
+}
+
+@keyframes fade-in-pagina {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Respeita quem prefere menos animação (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+}
+
+h1 {
+  font-family: "Kavoon", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 40px;
+}
+
+p {
+  font-family: "Kavoon", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+}
+
+section {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: var(--stand-out);
+  border: outset 5px rgb(145, 71, 2);
+}
+
+
+/*HEADER*/
+
+#head-info {
+  background-color: var(--stand-out);
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 0px 0px 50px 50px;
+  border: outset 5px rgb(145, 71, 2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+
+#head-info a{
+  text-decoration: none;
+  color: var(--texto-normal);
+}
+
+#head-info>div,
+ul {
+  align-items: center;
+}
+
+#head-info>ul,
+li {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: var(--texto-normal);
+  margin-left: 1%;
+  width: 80%;
+}
+
+/*HEADER*/
+/*Para o SITE INTEIRO*/
+/*HOOK*/
+#hook {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: outset 5px rgb(145, 71, 2);
+}
+
+/*HOOK*/
+/*SOBRE*/
+#sobre-estabelecimento {
+  background-color: rgb(179, 220, 255);
+  padding: 1%;
+}
+
+#sobre-estabelecimento>h2 {
+  text-align: center;
+}
+
+/*SOBRE*/
+/*SABORES e ALTERNATIVAS*/
+#sabores-e-alternativas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#sabores-calzone {
+  display: grid;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#sabores-calzone>h3 {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
+
+/*SABORES e ALTERNATIVAS*/
+/*FOOTER*/
+/*FOOTER*/
+/*SOBREMESAS*/
+/*SOBREMESAS*/
+
+/*=================================*/
+/*        MENU HAMBÚRGUER          */
+/*=================================*/
+
+/* Estilo do botão hambúrguer (o ícone de três linhas) */
+#botao-hamburguer {
+  background: none;
+  border: none;
+  color: var(--texto-normal);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  /* No desktop fica escondido: o menu já aparece inteiro na horizontal */
+  display: none;
+}
+
+/* No celular: vira hambúrguer (até 760px) */
+@media (max-width: 760px) {
+
+  /* O header empilha: logo + hambúrguer na primeira linha, menu embaixo */
+  #head-info {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 0 0 24px 24px;
+    padding: 12px 16px;
+  }
+
+  /* Mostra o botão hambúrguer e joga para a direita */
+  #botao-hamburguer {
+    display: block;
+    margin-left: auto;
+    order: 2;
+  }
+
+  #header-logo {
+    order: 1;
+  }
+
+  /* A lista começa ESCONDIDA no celular... */
+  #head-info #lista-header {
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0; /* fechada */
+    padding: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  /* ...e aparece quando recebe a classe "aberto" (via JS) */
+  #head-info #lista-header.aberto {
+    max-height: 600px; /* espaço suficiente para todos os itens */
+  }
+
+  /* Cada item do menu no celular ocupa a linha toda */
+  #head-info #lista-header > li {
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+/*LOGO DO HEADER*/
+#header-logo {
+  display: flex;
+  align-items: center;
+}
+
+#header-logo img {
+  height: 64px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  #header-logo img {
+    height: 48px;
+  }
+}
+/*LOGO DO HEADER*/
+
+/*BORDA PADRÃO (a mesma do header e das seções da página inicial)*/
+.abertura,
+.painel,
+.acessos-paginas {
+  border: outset 5px rgb(145, 71, 2);
+}
+
+/*footer com cantos arredondados em cima, espelhando o header*/
+.acessos-paginas {
+  border-radius: 50px 50px 0 0;
+}
+/*BORDA PADRÃO*/
+
+/*BOTÃO DE PERFIL (circular, no header)*/
+#head-info #botao-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--btn-bg);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#head-info #botao-perfil:hover {
+  transform: scale(1.12);
+}
+
+#botao-perfil svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+/*BOTÃO DE PERFIL*/
+
+/*FOTO DE PERFIL*/
+#head-info #botao-perfil {
+  overflow: hidden;
+  padding: 0;
+}
+
+#botao-perfil img,
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.foto-area {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.foto-perfil {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--btn-bg);
+  color: white;
+  border: outset 5px rgb(145, 71, 2);
+}
+
+.foto-perfil svg {
+  width: 60%;
+  height: 60%;
+  fill: currentColor;
+}
+
+.foto-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.foto-acoes button {
+  cursor: pointer;
+}
+/*FOTO DE PERFIL*/
+
+/*FERRAMENTA DE BUSCA*/
+
+/*botão da lupa no header (fica à direita do menu no computador)*/
+#botao-busca {
+  order: 1;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--btn-bg);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#botao-busca:hover {
+  transform: scale(1.12);
+}
+
+#botao-busca svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/*empurra o menu para a direita, deixando a lupa colada nele*/
+#head-info #lista-header {
+  margin-left: auto;
+}
+
+/*caixa de busca (abre por cima de tudo)*/
+#caixa-busca {
+  width: min(600px, 92vw);
+  margin: 130px auto 0;
+  padding: 0;
+  border: outset 5px rgb(145, 71, 2);
+  border-radius: 30px;
+  background-color: var(--stand-out);
+  color: var(--texto-normal);
+}
+
+#caixa-busca::backdrop {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.busca-conteudo {
+  padding: 20px;
+}
+
+.busca-topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#campo-busca {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  font-family: "Comic Neue", cursive;
+  font-size: 20px;
+  color: black;
+  background-color: white;
+  border: 2px solid rgb(145, 71, 2);
+  border-radius: 50px;
+}
+
+#campo-busca:focus {
+  outline: 3px solid #3974cc;
+  outline-offset: 2px;
+}
+
+#fechar-busca {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+  background-color: var(--btn-bg);
+  color: white;
+}
+
+/*resultados (o "li" do site tem estilo próprio, por isso os resets aqui)*/
+#lista-itens {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+#lista-itens li {
+  display: block;
+  width: auto;
+  margin: 0;
+}
+
+#lista-itens a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-family: "Comic Neue", cursive;
+  font-size: 19px;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+}
+
+#lista-itens a:hover,
+#lista-itens a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+#busca-vazia {
+  margin-top: 16px;
+  font-family: "Comic Neue", cursive;
+  font-size: 18px;
+}
+
+.dark-mode #caixa-busca {
+  background-color: var(--stand-out-dark);
+  color: white;
+}
+
+.dark-mode #lista-itens a:hover,
+.dark-mode #lista-itens a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/*celular: a lupa fica na barra de cima, ao lado do hambúrguer*/
+@media (max-width: 760px) {
+  #botao-busca {
+    order: 2;
+    margin-left: auto;
+    width: 42px;
+    height: 42px;
+  }
+
+  #botao-busca + #botao-hamburguer {
+    margin-left: 6px;
+  }
+
+  /*tira o espaço vazio embaixo do header quando o menu está fechado*/
+  body.pagina-inicial #head-info,
+  body.pagina-interna #head-info {
+    row-gap: 0;
+  }
+
+  #head-info #lista-header.aberto {
+    margin-top: 12px;
+  }
+
+  #caixa-busca {
+    margin-top: 80px;
+    border-radius: 24px;
+  }
+
+  .busca-conteudo {
+    padding: 14px;
+  }
+
+  #campo-busca {
+    font-size: 18px;
+  }
+}
+/*FERRAMENTA DE BUSCA*/
+

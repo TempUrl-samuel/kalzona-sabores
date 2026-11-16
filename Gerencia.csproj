@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <Compile Include="../Codigo/PedidoJson.cs" Link="PedidoJson.cs" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Compile Include="../Codigo/RegistroPedido.cs" Link="RegistroPedido.cs" />
+    <Compile Include="../Codigo/Dados.cs" Link="Dados.cs" />
+    <Compile Include="../Codigo/Conexao.cs" Link="Conexao.cs" />
+    <Compile Include="../Codigo/Importar.cs" Link="Importar.cs" />
+    <Compile Include="../Codigo/Gerencia.cs" Link="Gerencia.cs" />
+    <Compile Include="../Codigo/Produto.cs" Link="Produto.cs" />
+    
+    <Compile Update="FrmLogin.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="FrmLogin.Designer.cs"><DependentUpon>FrmLogin.cs</DependentUpon></Compile>
+    <Compile Update="FrmPrincipal.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="FrmPrincipal.Designer.cs"><DependentUpon>FrmPrincipal.cs</DependentUpon></Compile>
+    <Compile Update="FrmPedidos.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Update="FrmPedidos.Designer.cs"><DependentUpon>FrmPedidos.cs</DependentUpon></Compile>
+  </ItemGroup>
+</Project>

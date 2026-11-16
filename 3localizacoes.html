@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="CSSs/style.css">
     <link rel="stylesheet" href="CSSs/paginas.css">
     <script src="script.js" defer></script>
+    <script src="delivery.js" defer></script>
 </head>
 
 <body class="pagina-interna">
     <header id="head-info">
         <a id="header-logo" href="index.html">
-            <img src="IMAGENS/Logotipo retrô Kalzona com swoosh dourado.png" alt="Kalzona">
+            <img src="https://raw.githubusercontent.com/TempUrl-samuel/kalzona-sabores/3753fbda74b2c33870ff4ec2bc37c6ddbb79d517/IMAGENS/Logotipo%20retr%C3%B4%20Kalzona%20com%20swoosh%20dourado.png" alt="Kalzona">
         </a>
-                <button onclick="abrirBusca()" id="botao-busca" type="button" aria-label="Pesquisar no cardápio" title="Pesquisar">
+        <button onclick="abrirBusca()" id="botao-busca" type="button" aria-label="Pesquisar no cardápio" title="Pesquisar">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
         </button>
         <button onclick="menuHamburguer()" id="botao-hamburguer" type="button" aria-label="Abrir menu">&#9776;</button>
@@ -43,6 +44,7 @@
             <p>Quando essas informações estiverem confirmadas, você poderá consultá-las aqui antes de fazer seu pedido.
             </p><a class="botao" href="5contato.html">Falar com a Kalzona</a>
         </section>
+    <p id="retorno" class="ajuda" role="status" aria-live="polite"></p>
     </main>
     <footer class="acessos-paginas">
         <a href="index.html">Início</a> |
